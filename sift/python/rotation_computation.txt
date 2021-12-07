@@ -1,0 +1,16 @@
+Computing Angle of Rotation Considering Object Orientation
+- Fix a midpoint at the top of the template image that is mapped onto the canvas image. 
+- Three points are to be used to determine the object orientation and following angle calculation: 
+  top_midpoint.y, center.y, pca_p1.y  
+Four possible scenarios: 
+(1) Template and first principal component oriented in opposite direction, template is upward facing/principal component downard facing.
+    Angle: theta = theta - 90 
+
+(2) Template and first principal component oriented in opposite direction, template is downward facing/principal component upward facing.
+    Angle: theta = theta + 270 (initial theta negative) 
+
+(3) Template and first principal component oriented in same direction, both upward facing. 
+    Angle: theta = theta + 90 (intial theta negative) 
+
+(4) Template and first principal component oriented in same direction, both downward facing.  
+    Angle: theta = theta + 90
