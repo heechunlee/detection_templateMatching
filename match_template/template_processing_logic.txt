@@ -1,0 +1,19 @@
+Original Method: 
+(1) Preprocessing template image. 
+(2) Cropping template from preprocessed canvas. 
+(3) Creating a series of rotated cropped images. 
+
+Troubleshooting: 
+- Produces white boxes when rotating images. 
+
+
+Current Method: 
+(1) Create a series of rotated cropped images from canvas first. 
+(2) Preprocess each rotated canvas image. 
+(3) Extract cropped template from each preprocessed rotated image. 
+
+Troubleshooting: 
+- Since crop_template method isolates the coordinates from the template image without rewriting the image entirely, 
+  the cropped images from the rotated canvases do not produce clean templates if there is noise in its vicinity. 
+  -> May be resolved if clean template images are used (ie. single object on black background). 
+- Small parts of white boxes may remain after producing cropped templates. 
